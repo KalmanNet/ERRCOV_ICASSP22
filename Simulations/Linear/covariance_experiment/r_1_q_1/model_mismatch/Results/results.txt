@@ -1,0 +1,24 @@
+Dynamic model
+------------------------------------------
+true model:
+F = [[0.9]]
+H = [[1.]]
+Q = [[1.]]
+R = [[1.]]
+model used by KalmanNet and Kalman filter:
+F_mod = [[0.5]]
+H_mod = [[1.]]
+Q_mod = [[1.]]
+R_mod = [[1.]]
+
+training parameters:
+------------------------------------------
+learning rate = 0.001
+weight decay = 1e-07
+
+evaluation results
+------------------------------------------
+MSE EKF: 0.8437954075932502 (-0.7376284262128351 dB)
+EKF average covariance: [[0.53079945]]
+MSE KalmanNet: 0.7375749349594116, (-1.3219385147094727 dB)
+KalmanNet average covariance: [[0.7032586]]
