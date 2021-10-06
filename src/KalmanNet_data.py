@@ -92,10 +92,8 @@ def DataGen(SysModel_data, Only_test=False, Only_training=False, sequential_trai
 def Data_Gen_multiple_obs(SysModel_data, N_trajectories, N_obs):
 
     SysModel_data.GenerateBatch(N_trajectories, 0.5)
-    process = SysModel_data.Target
-    noisefree_obs = getObs(process, SysModel_data.h)
-    noisefree_obs = torch.cat(N_obs * [noisefree_obs])
-    target = torch.cat(N_obs * [process])
+    target = torch.cat(N_obs * [SysModel_data.Target])
+    noisefree_obs = getObs(target, SysModel_data.h)
     noise = np.random.multivariate_normal(np.zeros(SysModel_data.n), SysModel_data.R.numpy(), size=(N_trajectories * N_obs, SysModel_data.T))
     noise = torch.tensor(noise.transpose(0,2,1)).to(torch.float)
     noisy_obs = noisefree_obs + noise

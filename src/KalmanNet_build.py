@@ -18,4 +18,3 @@ def NNBuild(SysModel):
 
     return Model
 
-

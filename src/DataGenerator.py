@@ -27,13 +27,13 @@ def load_data(obs_model, noise, process_noise=None, discrete=False, randomize_in
         pn_string = str(process_noise)
 
     if discrete and randomize_init_conditions:
-        path_base = f"data/discrete_randomized/q_{pn_string}/"
+        path_base = f"Simulations/Lorenz_Atractor/data/discrete_randomized/q_{pn_string}/"
     elif discrete and (not randomize_init_conditions):
-        path_base = f"data/discrete_non_randomized/q_{pn_string}/"
+        path_base = f"Simulations/Lorenz_Atractor/data/discrete_non_randomized/q_{pn_string}/"
     elif (not discrete) and randomize_init_conditions:
-        path_base = f"data/continuous_randomized/q_{pn_string}/"
+        path_base = f"Simulations/Lorenz_Atractor/data/continuous_randomized/q_{pn_string}/"
     elif (not discrete) and (not randomize_init_conditions):
-        path_base = f"data/continuous_non_randomized/q_{pn_string}/"
+        path_base = f"Simulations/Lorenz_Atractor/data/continuous_non_randomized/q_{pn_string}/"
 
     os.makedirs(path_base, exist_ok=True)
 

@@ -1,0 +1,2 @@
+learning rate: 0.001, weight decay: 1e-09, N_GRU: 4
+noise: 0 [dB], evolution model: exact, observation model: identity
